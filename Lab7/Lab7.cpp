@@ -2,6 +2,7 @@
 //
 
 #include "framework.h"
+#include <iostream>;
 #include "Lab7.h"
 
 
@@ -21,7 +22,13 @@ Node::Node(string word)
 	leftChild = nullptr;
 }
 
-//Binary Search Tree destructor
+//Binary Search Tree Constructor
+BinaryST::BinaryST() {
+	nodeCount = 0;
+	root = nullptr;
+}
+
+//Binary Search Tree Destructor
 BinaryST::~BinaryST() {
 
 	EmptyTree();
@@ -30,12 +37,13 @@ BinaryST::~BinaryST() {
 
 void BinaryST::Insert(Node* node) {
 
-	if (tree.empty()) {
-		tree.push_back(node);
+	if (nodeCount == 0) {
+		root = node;
+		nodeCount++;
 	}
 	else{
 
-		Node* temp = tree[0];
+		Node* temp = root;
 		bool stop = false;
 
 		while (stop == false) {
@@ -44,7 +52,7 @@ void BinaryST::Insert(Node* node) {
 
 				if (temp->rightChild == nullptr) {
 					temp->rightChild = node;
-					tree.push_back(node);
+					nodeCount++;
 					stop = true;
 				}
 				else {
@@ -55,7 +63,7 @@ void BinaryST::Insert(Node* node) {
 
 				if (temp->leftChild == nullptr) {
 					temp->leftChild = node;
-					tree.push_back(node);
+					nodeCount++;
 					stop = true;
 				}
 				else {
@@ -74,16 +82,37 @@ Node* BinaryST::Find(string value) {
 };
 
 
+Node* BinaryST::getRoot() {
+	return root;
+}
+
 int BinaryST::Size() {
 
 	return 0;
 };
 
 
-vector<Node*> BinaryST::GetAllAscending() {
+vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 
-	bool sorted = false;
-	vector<Node*> newTree = tree;
+	if (node == nullptr) {
+		return treeNodes;
+	};
+
+	if (node->leftChild != nullptr) {
+		GetAllAscending(node->leftChild, treeNodes);
+	}
+
+	//cout << node->value + " ";
+	treeNodes.push_back(node);
+
+	if (node->rightChild != nullptr) {
+		GetAllAscending(node->rightChild, treeNodes);
+	}
+
+	return treeNodes;
+
+	/*bool sorted = false;
+	vector<Node*> newTree;
 	Node* temp;
 
 	for (int i = 0; i < newTree.size(); i++) {
@@ -103,7 +132,7 @@ vector<Node*> BinaryST::GetAllAscending() {
 		}
 	}
 
-	return newTree;
+	return newTree;*/
 };
 
 

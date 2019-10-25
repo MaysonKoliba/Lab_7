@@ -19,57 +19,60 @@ int main()
 	sciFiTree->Insert(node3);
 	sciFiTree->Insert(node4);
 
-	vector<Node*> sciFiAscend = sciFiTree->GetAllAscending();
+	Node* node = sciFiTree->getRoot();
+	vector<Node*> sciFiAscend;
+	
+	sciFiAscend = sciFiTree->GetAllAscending(node,sciFiAscend);
 
 	for (int i = 0; i < sciFiAscend.size(); i++) {
 		cout << to_string(i+1) + " " + sciFiAscend[i]->value << endl;
 	}
 
 
-	//Disney Movie Tree Testing
-	BinaryST* disneyTree = new BinaryST();
-	Node* node5 = new Node("Cars");
-	Node* node6 = new Node("Mosters, Inc");
-	Node* node7 = new Node("The Incredibles");
-	Node* node8 = new Node("Wall-E");
+	////Disney Movie Tree Testing
+	//BinaryST* disneyTree = new BinaryST();
+	//Node* node5 = new Node("Cars");
+	//Node* node6 = new Node("Mosters, Inc");
+	//Node* node7 = new Node("The Incredibles");
+	//Node* node8 = new Node("Wall-E");
 
-	disneyTree->Insert(node5);
-	disneyTree->Insert(node6);
-	disneyTree->Insert(node7);
-	disneyTree->Insert(node8);
+	//disneyTree->Insert(node5);
+	//disneyTree->Insert(node6);
+	//disneyTree->Insert(node7);
+	//disneyTree->Insert(node8);
 
-	vector<Node*> disneyAscend = disneyTree->GetAllAscending();
+	//vector<Node*> disneyAscend = disneyTree->GetAllAscending();
 
-	cout << endl << endl;
-	for (int i = 0; i < disneyAscend.size(); i++) {
-		cout << to_string(i + 1) + " " + disneyAscend[i]->value << endl;
-	}
-
-
-	//Scary Movie Tree Testing 
-	BinaryST* scaryTree = new BinaryST();
-	Node* node9 = new Node("Halloween");
-	Node* node10 = new Node("A Nightmare On Elm Street");
-	Node* node11 = new Node("Hocus Pocus");
-	Node* node12 = new Node("Beetlejuice");
-
-	scaryTree->Insert(node9);
-	scaryTree->Insert(node10);
-	scaryTree->Insert(node11);
-	scaryTree->Insert(node12);
-
-	vector<Node*> scaryAscend = scaryTree->GetAllAscending();
-
-	cout << endl << endl;
-	for (int i = 0; i < scaryAscend.size(); i++) {
-		cout << to_string(i + 1) + " " + scaryAscend[i]->value << endl;
-	}
+	//cout << endl << endl;
+	//for (int i = 0; i < disneyAscend.size(); i++) {
+	//	cout << to_string(i + 1) + " " + disneyAscend[i]->value << endl;
+	//}
 
 
-	delete sciFiTree;
-	delete disneyTree;
-	delete scaryTree;
+	////Scary Movie Tree Testing 
+	//BinaryST* scaryTree = new BinaryST();
+	//Node* node9 = new Node("Halloween");
+	//Node* node10 = new Node("A Nightmare On Elm Street");
+	//Node* node11 = new Node("Hocus Pocus");
+	//Node* node12 = new Node("Beetlejuice");
 
-	return 0;
+	//scaryTree->Insert(node9);
+	//scaryTree->Insert(node10);
+	//scaryTree->Insert(node11);
+	//scaryTree->Insert(node12);
+
+	//vector<Node*> scaryAscend = scaryTree->GetAllAscending();
+
+	//cout << endl << endl;
+	//for (int i = 0; i < scaryAscend.size(); i++) {
+	//	cout << to_string(i + 1) + " " + scaryAscend[i]->value << endl;
+	//}
+
+
+	//delete sciFiTree;
+	//delete disneyTree;
+	//delete scaryTree;
+
+	//return 0;
 }
 

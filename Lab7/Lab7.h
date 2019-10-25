@@ -29,16 +29,19 @@ public:
 class LAB7_API BinaryST {
 public:
 
-	BinaryST() {};
+	BinaryST();
 	~BinaryST();
 	void Insert(Node* node);
 	Node* Find(string value);
+	Node* getRoot();
 	int Size();
-	vector<Node*> GetAllAscending();
+	vector<Node*> GetAllAscending(Node* node, vector<Node*> &ascend);
 	vector<Node*> GetAllDescending();
 	void EmptyTree();
 	void Remove();
 
 private:
 	vector<Node*> tree;
+	int nodeCount;
+	Node* root;
 };
