@@ -36,9 +36,9 @@ public:
 	Node* getRoot();
 	int Size();
 	vector<Node*> GetAllAscending(Node* node, vector<Node*> &ascend);
-	vector<Node*> GetAllDescending();
+	vector<Node*> GetAllDescending(Node* node, vector<Node*>& treeNodes);
 	void EmptyTree();
-	void Remove();
+	void Remove(string value);
 
 private:
 	vector<Node*> tree;

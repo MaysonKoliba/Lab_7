@@ -34,7 +34,6 @@ BinaryST::~BinaryST() {
 	EmptyTree();
 }
 
-
 void BinaryST::Insert(Node* node) {
 
 	if (nodeCount == 0) {
@@ -76,9 +75,41 @@ void BinaryST::Insert(Node* node) {
 
 
 Node* BinaryST::Find(string value) {
-	Node* test = nullptr;
+	
+	Node* temp = root;
+	bool stop = false;
 
-	return test;
+	if (temp->value == value) {
+		return temp;
+	}
+
+	while (stop == false) {
+
+		if (value.compare(temp->value) > 0) {
+
+			if (temp->rightChild->value == value) {
+				temp = temp->rightChild;
+				stop = true;
+				return temp;
+			}
+			else {
+				temp = temp->rightChild;
+			}
+		}
+		else if (value.compare(temp->value) < 0) {
+
+			if (temp->leftChild->value == value) {
+				temp = temp->leftChild;
+				stop = true;
+				return temp;
+			}
+			else {
+				temp = temp->leftChild;
+			}
+		}
+	}
+
+	return nullptr;
 };
 
 
@@ -88,9 +119,8 @@ Node* BinaryST::getRoot() {
 
 int BinaryST::Size() {
 
-	return 0;
+	return nodeCount;
 };
-
 
 vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 
@@ -102,7 +132,6 @@ vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 		GetAllAscending(node->leftChild, treeNodes);
 	}
 
-	//cout << node->value + " ";
 	treeNodes.push_back(node);
 
 	if (node->rightChild != nullptr) {
@@ -110,36 +139,26 @@ vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 	}
 
 	return treeNodes;
-
-	/*bool sorted = false;
-	vector<Node*> newTree;
-	Node* temp;
-
-	for (int i = 0; i < newTree.size(); i++) {
-		if (sorted) {
-			break;
-		}
-		else {
-			sorted = true;
-			for (int j = 0; j < newTree.size() - 1; j++) {
-				if (newTree[j]->value.compare(newTree[j+1]->value) > 0) {
-					temp = newTree[j + 1];
-					newTree[j + 1] = newTree[j];
-					newTree[j] = temp;
-					sorted = false;
-				}
-			}
-		}
-	}
-
-	return newTree;*/
 };
 
 
-vector<Node*> BinaryST::GetAllDescending() {
-	vector<Node*> testVector = tree;
+vector<Node*> BinaryST::GetAllDescending(Node* node, vector<Node*>& treeNodes) {
+	
+	if (node == nullptr) {
+		return treeNodes;
+	};
 
-	return testVector;
+	if (node->rightChild != nullptr) {
+		GetAllDescending(node->rightChild, treeNodes);
+	}
+
+	treeNodes.push_back(node);
+
+	if (node->leftChild != nullptr) {
+		GetAllDescending(node->leftChild, treeNodes);
+	}
+
+	return treeNodes;
 };
 
 
@@ -152,4 +171,27 @@ void BinaryST::EmptyTree() {
 };
 
 
-void BinaryST::Remove() {};
+void BinaryST::Remove(string value) {
+
+	/*Node* targetNode = this->Find(value);
+
+	if (subTreePtr == nullptr) {
+		return nullptr;
+	}
+	else if (subTreePtr->getItem() == target) {
+		subTreePtr = removeNode(subTreePtr);
+		return  subTreePtr;
+	}
+	else if (subTreePtr->getItem() > target) {
+		tempPtr = removeValue(subTreePtr->getLeftChildPtr(), target, success);
+		subTreePtr->setLeftChildPtr(tempPtr);
+		return subTreePtr;
+	}
+	else
+	{
+		tempPtr = removeValue(subTreePtr->getRightChildPtr(), target, success);
+		subTreePtr->setRightChildPtr(tempPtr);
+		return subTreePtr;
+	}*/
+
+};

@@ -11,5 +11,10 @@ C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): messag
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :         [
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :             _Ty=Node *
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :         ]
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(27,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(31,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(37,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(62,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(68,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(93,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(99,20): warning C4018:  '<': signed/unsigned mismatch
   Lab7exe.vcxproj -> C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\Lab7exe.exe
