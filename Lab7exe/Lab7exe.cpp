@@ -6,7 +6,7 @@
 
 int main()
 {
-	//SciFi Show/Movie Tree Testing
+	//SciFi Movie Tree Testing
 	BinaryST* sciFiTree = new BinaryST();
 	Node* node1 = new Node("Star Wars");
 	Node* node2 = new Node("Star Trek");
@@ -18,28 +18,19 @@ int main()
 	sciFiTree->Insert(node3);
 	sciFiTree->Insert(node4);
 
-	//Node* deletedNode = sciFiTree->Remove("Space Balls");
-
 	Node* sciFiRoot = sciFiTree->getRoot();
 	vector<Node*> sciFiAscend;
 	vector<Node*> sciFiDescend;
 
-	Node* find = sciFiTree->Find("Galaxy Quest");
-	cout << find->value << endl;
-
-	Node* previous = sciFiTree->getPrevious("Star Wars");
-	cout << previous->value << endl;
-
-
-	
 	sciFiAscend = sciFiTree->GetAllAscending(sciFiRoot,sciFiAscend);
 	sciFiDescend = sciFiTree->GetAllDescending(sciFiRoot, sciFiDescend);
 
+	cout << "<< SciFi Movies Ascending Order >>" << endl;
 	for (int i = 0; i < sciFiAscend.size(); i++) {
 		cout << to_string(i+1) + " " + sciFiAscend[i]->value << endl;
 	}
 
-	cout << endl;
+	cout << endl << "<< SciFi Movies Descending Order >>" << endl;
 
 	for (int i = 0; i < sciFiDescend.size(); i++) {
 		cout << to_string(i + 1) + " " + sciFiDescend[i]->value << endl;
@@ -65,12 +56,12 @@ int main()
 	disneyAscend = disneyTree->GetAllAscending(disneyRoot,disneyAscend);
 	disneyDescend = disneyTree->GetAllDescending(disneyRoot, disneyDescend);
 
-	cout << endl << endl;
+	cout << endl << endl << "<< Disney Movies Ascending Order >>" << endl;
 	for (int i = 0; i < disneyAscend.size(); i++) {
 		cout << to_string(i + 1) + " " + disneyAscend[i]->value << endl;
 	}
 
-	cout << endl;
+	cout << endl << "<< Disney Movies Descending Order >>" << endl;
 
 	for (int i = 0; i < disneyDescend.size(); i++) {
 		cout << to_string(i + 1) + " " + disneyDescend[i]->value << endl;
@@ -89,9 +80,6 @@ int main()
 	scaryTree->Insert(node11);
 	scaryTree->Insert(node12);
 
-	Node* deletedNode = scaryTree->Remove("A Nightmare On Elm Street");
-	Node* previousScary = scaryTree->getPrevious("Beetlejuice");
-
 	Node* scaryRoot = scaryTree->getRoot();
 	vector<Node*> scaryAscend;
 	vector<Node*> scaryDescend;
@@ -99,12 +87,12 @@ int main()
 	scaryAscend = scaryTree->GetAllAscending(scaryRoot,scaryAscend);
 	scaryDescend = scaryTree->GetAllDescending(scaryRoot, scaryDescend);
 
-	cout << endl << endl;
+	cout << endl << endl << "<< Scary Movies Ascending Order >>" << endl;
 	for (int i = 0; i < scaryAscend.size(); i++) {
 		cout << to_string(i + 1) + " " + scaryAscend[i]->value << endl;
 	}
 
-	cout << endl;
+	cout << endl << "<< Scary Movies Descending Order >>" << endl;
 
 	for (int i = 0; i < scaryDescend.size(); i++) {
 		cout << to_string(i + 1) + " " + scaryDescend[i]->value << endl;

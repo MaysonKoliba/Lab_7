@@ -87,9 +87,11 @@ Node* BinaryST::Find(string value) {
 
 		if (value.compare(temp->value) > 0) {
 
-			if (temp->rightChild->value == value) {
+			if (temp->rightChild == nullptr) {
+				return nullptr;
+			}
+			else if (temp->rightChild->value == value) {
 				temp = temp->rightChild;
-				stop = true;
 				return temp;
 			}
 			else {
@@ -98,9 +100,11 @@ Node* BinaryST::Find(string value) {
 		}
 		else if (value.compare(temp->value) < 0) {
 
-			if (temp->leftChild->value == value) {
+			if (temp->leftChild == nullptr) {
+				return nullptr;
+			}
+			else if (temp->leftChild->value == value) {
 				temp = temp->leftChild;
-				stop = true;
 				return temp;
 			}
 			else {
@@ -168,17 +172,11 @@ void BinaryST::EmptyTree() {
 		delete tree[i];
 	}
 
+	root = nullptr;
+	nodeCount = 0;
+
 };
 
-Node* BinaryST::minValueNode(Node* node)
-{
-	Node* current = node;
-
-	while (current && current->leftChild != nullptr)
-		current = current->leftChild;
-
-	return current;
-}
 
 Node* BinaryST::getPrevious(string value) {
 
@@ -193,7 +191,10 @@ Node* BinaryST::getPrevious(string value) {
 
 		if (value.compare(temp->value) > 0) {
 
-			if (temp->rightChild->value == value) {
+			if (temp->rightChild == nullptr) {
+				return nullptr;
+			}
+			else if (temp->rightChild->value == value) {
 				stop = true;
 				return temp;
 			}
@@ -203,7 +204,10 @@ Node* BinaryST::getPrevious(string value) {
 		}
 		else if (value.compare(temp->value) < 0) {
 
-			if (temp->leftChild->value == value) {
+			if (temp->leftChild == nullptr) {
+				return nullptr;
+			}
+			else if (temp->leftChild->value == value) {
 				stop = true;
 				return temp;
 			}
@@ -228,12 +232,24 @@ Node* BinaryST::Remove(string value) {
 			previousNode->leftChild->leftChild = targetNode->rightChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
 		}
 		else if (previousNode->rightChild->value == targetNode->value) {
 			previousNode->rightChild = targetNode->leftChild;
 			previousNode->rightChild->leftChild = targetNode->rightChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
+		}
+	}
+	else if (targetNode->leftChild == nullptr && targetNode->rightChild == nullptr) {
+		if (previousNode->leftChild->value == targetNode->value) {
+			previousNode->leftChild = nullptr;
+			nodeCount--;
+		}
+		else if (previousNode->rightChild->value == targetNode->value) {
+			previousNode->rightChild = nullptr;
+			nodeCount--;
 		}
 	}
 	else if (targetNode->leftChild != nullptr) {
@@ -241,11 +257,13 @@ Node* BinaryST::Remove(string value) {
 			previousNode->leftChild = targetNode->leftChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
 		}
 		else if (previousNode->rightChild->value == targetNode->value) {
 			previousNode->rightChild = targetNode->leftChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
 		}
 	}
 	else if (targetNode->rightChild != nullptr) {
@@ -253,11 +271,13 @@ Node* BinaryST::Remove(string value) {
 			previousNode->leftChild = targetNode->rightChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
 		}
 		else if (previousNode->rightChild->value == targetNode->value) {
 			previousNode->rightChild = targetNode->rightChild;
 			targetNode->leftChild = nullptr;
 			targetNode->rightChild = nullptr;
+			nodeCount--;
 		}
 	}
 

@@ -39,7 +39,6 @@ public:
 	vector<Node*> GetAllDescending(Node* node, vector<Node*>& treeNodes);
 	void EmptyTree();
 	Node* Remove(string value);
-	Node* minValueNode(Node* node);
 	Node* getPrevious(string value);
 
 private:

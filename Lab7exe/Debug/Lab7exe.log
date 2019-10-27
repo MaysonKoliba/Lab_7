@@ -11,10 +11,10 @@ C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): messag
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :         [
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :             _Ty=Node *
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(38): message :         ]
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(38,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(44,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(69,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(75,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(103,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(109,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(29,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(35,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(60,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(66,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(91,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(97,20): warning C4018:  '<': signed/unsigned mismatch
   Lab7exe.vcxproj -> C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\Lab7exe.exe
