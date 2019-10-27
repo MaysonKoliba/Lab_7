@@ -31,7 +31,7 @@ BinaryST::BinaryST() {
 //Binary Search Tree Destructor
 BinaryST::~BinaryST() {
 
-	EmptyTree();
+	EmptyTree(root);
 }
 
 void BinaryST::Insert(Node* node) {
@@ -166,14 +166,16 @@ vector<Node*> BinaryST::GetAllDescending(Node* node, vector<Node*>& treeNodes) {
 };
 
 
-void BinaryST::EmptyTree() {
+void BinaryST::EmptyTree(Node* node) {
 
-	for (int i = 0; i < tree.size(); i++) {
-		delete tree[i];
+	if (node != nullptr) {
+		EmptyTree(node->leftChild);
+		EmptyTree(node->rightChild);
+		delete node;
+		nodeCount--;
 	}
 
 	root = nullptr;
-	nodeCount = 0;
 
 };
 

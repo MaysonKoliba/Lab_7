@@ -77,7 +77,7 @@ namespace UnitTest1
 			Assert::IsTrue(previous1->value == "Star Wars");
 			Assert::IsTrue(previous2->value == "Space Balls");
 
-			sciFiTree->EmptyTree();
+			sciFiTree->EmptyTree(sciFiTree->getRoot());
 
 			Assert::AreEqual(sciFiTree->Size(), 0);
 		}

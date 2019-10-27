@@ -37,12 +37,11 @@ public:
 	int Size();
 	vector<Node*> GetAllAscending(Node* node, vector<Node*> &ascend);
 	vector<Node*> GetAllDescending(Node* node, vector<Node*>& treeNodes);
-	void EmptyTree();
+	void EmptyTree(Node* node);
 	Node* Remove(string value);
 	Node* getPrevious(string value);
 
 private:
-	vector<Node*> tree;
 	int nodeCount;
 	Node* root;
 };
