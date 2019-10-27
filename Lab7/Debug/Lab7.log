@@ -2,5 +2,4 @@
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.cpp(5,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(19,14): warning C4251:  'Node::value': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Node'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-     Creating library C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\LAB7.lib and object C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\LAB7.exp
   Lab7.vcxproj -> C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\LAB7.dll

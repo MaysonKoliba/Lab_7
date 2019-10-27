@@ -245,13 +245,19 @@ Node* BinaryST::Remove(string value) {
 		}
 	}
 	else if (targetNode->leftChild == nullptr && targetNode->rightChild == nullptr) {
-		if (previousNode->leftChild->value == targetNode->value) {
-			previousNode->leftChild = nullptr;
-			nodeCount--;
+
+		if (previousNode->leftChild != nullptr) {
+			if (previousNode->leftChild->value == targetNode->value) {
+				previousNode->leftChild = nullptr;
+				nodeCount--;
+			}
 		}
-		else if (previousNode->rightChild->value == targetNode->value) {
-			previousNode->rightChild = nullptr;
-			nodeCount--;
+
+		if (previousNode->rightChild != nullptr) {
+			if (previousNode->rightChild->value == targetNode->value) {
+				previousNode->rightChild = nullptr;
+				nodeCount--;
+			}
 		}
 	}
 	else if (targetNode->leftChild != nullptr) {
@@ -269,18 +275,25 @@ Node* BinaryST::Remove(string value) {
 		}
 	}
 	else if (targetNode->rightChild != nullptr) {
-		if (previousNode->leftChild->value == targetNode->value) {
-			previousNode->leftChild = targetNode->rightChild;
-			targetNode->leftChild = nullptr;
-			targetNode->rightChild = nullptr;
-			nodeCount--;
+		if (previousNode->leftChild != nullptr) {
+			if (previousNode->leftChild->value == targetNode->value) {
+				previousNode->leftChild = targetNode->rightChild;
+				targetNode->leftChild = nullptr;
+				targetNode->rightChild = nullptr;
+				nodeCount--;
+			}
 		}
-		else if (previousNode->rightChild->value == targetNode->value) {
-			previousNode->rightChild = targetNode->rightChild;
-			targetNode->leftChild = nullptr;
-			targetNode->rightChild = nullptr;
-			nodeCount--;
+		else if (previousNode->rightChild != nullptr) {
+			if (previousNode->rightChild->value == targetNode->value) {
+				previousNode->rightChild = targetNode->rightChild;
+				targetNode->leftChild = nullptr;
+				targetNode->rightChild = nullptr;
+				nodeCount--;
+			}
 		}
+	}
+	else {
+		return nullptr;
 	}
 
 	return targetNode;

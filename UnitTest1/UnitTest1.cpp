@@ -81,5 +81,152 @@ namespace UnitTest1
 
 			Assert::AreEqual(sciFiTree->Size(), 0);
 		}
+
+
+
+		TEST_METHOD(DisneyTreeInsertFindTest)
+		{
+			BinaryST* disneyTree = new BinaryST();
+			Node* node5 = new Node("Cars");
+			Node* node6 = new Node("Monsters, Inc");
+			Node* node7 = new Node("The Incredibles");
+			Node* node8 = new Node("Wall-E");
+
+			disneyTree->Insert(node5);
+			disneyTree->Insert(node6);
+			disneyTree->Insert(node7);
+			disneyTree->Insert(node8);
+
+			Node* findNode = disneyTree->Find("Cars");
+
+			Assert::AreEqual(4,disneyTree->Size());
+			Assert::IsTrue(findNode->value == "Cars");
+			Assert::IsTrue(disneyTree->Find("Mickey Mouse") == nullptr);
+
+			delete disneyTree;
+		}
+
+		TEST_METHOD(DisneyTreeRemoveTest)
+		{
+			BinaryST* disneyTree = new BinaryST();
+			Node* node5 = new Node("Cars");
+			Node* node6 = new Node("Monsters, Inc");
+			Node* node7 = new Node("The Incredibles");
+			Node* node8 = new Node("Wall-E");
+
+			disneyTree->Insert(node5);
+			disneyTree->Insert(node6);
+			disneyTree->Insert(node7);
+			disneyTree->Insert(node8);
+
+			Node* remove1 = disneyTree->Remove("Monsters, Inc");
+			Node* remove2 = disneyTree->Remove("Wall-E");
+
+			Assert::IsTrue(disneyTree->getRoot()->rightChild->value == "The Incredibles");
+			Assert::IsTrue(disneyTree->getRoot()->rightChild->rightChild == nullptr);
+			Assert::AreEqual(2, disneyTree->Size());
+
+			delete disneyTree;
+			delete remove1;
+			delete remove2;
+		}
+
+		TEST_METHOD(DisneyTreeEmptyTest)
+		{
+			BinaryST* disneyTree = new BinaryST();
+			Node* node5 = new Node("Cars");
+			Node* node6 = new Node("Monsters, Inc");
+			Node* node7 = new Node("The Incredibles");
+			Node* node8 = new Node("Wall-E");
+
+			disneyTree->Insert(node5);
+			disneyTree->Insert(node6);
+			disneyTree->Insert(node7);
+			disneyTree->Insert(node8);
+
+			Node* previous1 = disneyTree->getPrevious("The Incredibles");
+			Node* previous2 = disneyTree->getPrevious("Wall-E");
+
+			Assert::IsTrue(previous1->value == "Monsters, Inc");
+			Assert::IsTrue(previous2->value == "The Incredibles");
+
+			disneyTree->EmptyTree(disneyTree->getRoot());
+
+			Assert::AreEqual(disneyTree->Size(), 0);
+		}
+
+
+
+
+		TEST_METHOD(ScaryTreeInsertFindTest)
+		{
+			BinaryST* scaryTree = new BinaryST();
+			Node* node9 = new Node("Halloween");
+			Node* node10 = new Node("A Nightmare On Elm Street");
+			Node* node11 = new Node("Hocus Pocus");
+			Node* node12 = new Node("Beetlejuice");
+
+			scaryTree->Insert(node9);
+			scaryTree->Insert(node10);
+			scaryTree->Insert(node11);
+			scaryTree->Insert(node12);
+
+			Node* findNode = scaryTree->Find("Hocus Pocus");
+
+			Assert::AreEqual(4, scaryTree->Size());
+			Assert::IsTrue(findNode->value == "Hocus Pocus");
+			Assert::IsTrue(scaryTree->Find("Scream") == nullptr);
+
+			delete scaryTree;
+		}
+
+		TEST_METHOD(ScaryTreeRemoveTest)
+		{
+			BinaryST* scaryTree = new BinaryST();
+			Node* node9 = new Node("Halloween");
+			Node* node10 = new Node("A Nightmare On Elm Street");
+			Node* node11 = new Node("Hocus Pocus");
+			Node* node12 = new Node("Beetlejuice");
+
+			scaryTree->Insert(node9);
+			scaryTree->Insert(node10);
+			scaryTree->Insert(node11);
+			scaryTree->Insert(node12);
+
+			Node* remove1 = scaryTree->Remove("Hocus Pocus");
+			Node* remove2 = scaryTree->Remove("A Nightmare On Elm Street");
+
+			Assert::IsTrue(scaryTree->getRoot()->rightChild == nullptr);
+			Assert::IsTrue(scaryTree->getRoot()->leftChild->value == "Beetlejuice");
+			Assert::AreEqual(2, scaryTree->Size());
+
+			delete scaryTree;
+			delete remove1;
+			delete remove2;
+		}
+
+		TEST_METHOD(ScaryTreeEmptyTest)
+		{
+			BinaryST* scaryTree = new BinaryST();
+			Node* node9 = new Node("Halloween");
+			Node* node10 = new Node("A Nightmare On Elm Street");
+			Node* node11 = new Node("Hocus Pocus");
+			Node* node12 = new Node("Beetlejuice");
+
+			scaryTree->Insert(node9);
+			scaryTree->Insert(node10);
+			scaryTree->Insert(node11);
+			scaryTree->Insert(node12);
+
+			Node* previous1 = scaryTree->getPrevious("Beetlejuice");
+			Node* previous2 = scaryTree->getPrevious("Hocus Pocus");
+
+			Assert::IsTrue(previous1->value == "A Nightmare On Elm Street");
+			Assert::IsTrue(previous2->value == "Halloween");
+
+			scaryTree->EmptyTree(scaryTree->getRoot());
+
+			Assert::AreEqual(scaryTree->Size(), 0);
+		}
 	};
 }

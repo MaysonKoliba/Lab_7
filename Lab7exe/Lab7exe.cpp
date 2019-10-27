@@ -40,7 +40,7 @@ int main()
 	//Disney Movie Tree Testing
 	BinaryST* disneyTree = new BinaryST();
 	Node* node5 = new Node("Cars");
-	Node* node6 = new Node("Mosters, Inc");
+	Node* node6 = new Node("Monsters, Inc");
 	Node* node7 = new Node("The Incredibles");
 	Node* node8 = new Node("Wall-E");
 
