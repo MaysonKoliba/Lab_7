@@ -18,12 +18,19 @@ int main()
 	sciFiTree->Insert(node3);
 	sciFiTree->Insert(node4);
 
+	//Node* deletedNode = sciFiTree->Remove("Space Balls");
+
 	Node* sciFiRoot = sciFiTree->getRoot();
 	vector<Node*> sciFiAscend;
 	vector<Node*> sciFiDescend;
 
-	Node* node = sciFiTree->Find("Galaxy Quest");
-	cout << node->value << endl;
+	Node* find = sciFiTree->Find("Galaxy Quest");
+	cout << find->value << endl;
+
+	Node* previous = sciFiTree->getPrevious("Star Wars");
+	cout << previous->value << endl;
+
+
 	
 	sciFiAscend = sciFiTree->GetAllAscending(sciFiRoot,sciFiAscend);
 	sciFiDescend = sciFiTree->GetAllDescending(sciFiRoot, sciFiDescend);
@@ -81,6 +88,9 @@ int main()
 	scaryTree->Insert(node10);
 	scaryTree->Insert(node11);
 	scaryTree->Insert(node12);
+
+	Node* deletedNode = scaryTree->Remove("A Nightmare On Elm Street");
+	Node* previousScary = scaryTree->getPrevious("Beetlejuice");
 
 	Node* scaryRoot = scaryTree->getRoot();
 	vector<Node*> scaryAscend;

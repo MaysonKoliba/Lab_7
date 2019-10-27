@@ -38,7 +38,9 @@ public:
 	vector<Node*> GetAllAscending(Node* node, vector<Node*> &ascend);
 	vector<Node*> GetAllDescending(Node* node, vector<Node*>& treeNodes);
 	void EmptyTree();
-	void Remove(string value);
+	Node* Remove(string value);
+	Node* minValueNode(Node* node);
+	Node* getPrevious(string value);
 
 private:
 	vector<Node*> tree;

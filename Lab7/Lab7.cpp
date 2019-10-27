@@ -76,7 +76,7 @@ void BinaryST::Insert(Node* node) {
 
 Node* BinaryST::Find(string value) {
 	
-	Node* temp = root;
+	Node* temp = this->root;
 	bool stop = false;
 
 	if (temp->value == value) {
@@ -170,28 +170,96 @@ void BinaryST::EmptyTree() {
 
 };
 
+Node* BinaryST::minValueNode(Node* node)
+{
+	Node* current = node;
 
-void BinaryST::Remove(string value) {
+	while (current && current->leftChild != nullptr)
+		current = current->leftChild;
 
-	/*Node* targetNode = this->Find(value);
+	return current;
+}
 
-	if (subTreePtr == nullptr) {
-		return nullptr;
+Node* BinaryST::getPrevious(string value) {
+
+	Node* temp = this->root;
+	bool stop = false;
+
+	if (temp->value == value) {
+		return temp;
 	}
-	else if (subTreePtr->getItem() == target) {
-		subTreePtr = removeNode(subTreePtr);
-		return  subTreePtr;
-	}
-	else if (subTreePtr->getItem() > target) {
-		tempPtr = removeValue(subTreePtr->getLeftChildPtr(), target, success);
-		subTreePtr->setLeftChildPtr(tempPtr);
-		return subTreePtr;
-	}
-	else
-	{
-		tempPtr = removeValue(subTreePtr->getRightChildPtr(), target, success);
-		subTreePtr->setRightChildPtr(tempPtr);
-		return subTreePtr;
-	}*/
 
+	while (stop == false) {
+
+		if (value.compare(temp->value) > 0) {
+
+			if (temp->rightChild->value == value) {
+				stop = true;
+				return temp;
+			}
+			else {
+				temp = temp->rightChild;
+			}
+		}
+		else if (value.compare(temp->value) < 0) {
+
+			if (temp->leftChild->value == value) {
+				stop = true;
+				return temp;
+			}
+			else {
+				temp = temp->leftChild;
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+
+Node* BinaryST::Remove(string value) {
+
+	Node* targetNode = this->Find(value);
+	Node* previousNode = getPrevious(targetNode->value);
+
+	if (targetNode->leftChild != nullptr && targetNode->rightChild != nullptr) {
+		if (previousNode->leftChild->value == targetNode->value) {
+			previousNode->leftChild = targetNode->leftChild;
+			previousNode->leftChild->leftChild = targetNode->rightChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+		else if (previousNode->rightChild->value == targetNode->value) {
+			previousNode->rightChild = targetNode->leftChild;
+			previousNode->rightChild->leftChild = targetNode->rightChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+	}
+	else if (targetNode->leftChild != nullptr) {
+		if (previousNode->leftChild->value == targetNode->value) {
+			previousNode->leftChild = targetNode->leftChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+		else if (previousNode->rightChild->value == targetNode->value) {
+			previousNode->rightChild = targetNode->leftChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+	}
+	else if (targetNode->rightChild != nullptr) {
+		if (previousNode->leftChild->value == targetNode->value) {
+			previousNode->leftChild = targetNode->rightChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+		else if (previousNode->rightChild->value == targetNode->value) {
+			previousNode->rightChild = targetNode->rightChild;
+			targetNode->leftChild = nullptr;
+			targetNode->rightChild = nullptr;
+		}
+	}
+
+	return targetNode;
 };
