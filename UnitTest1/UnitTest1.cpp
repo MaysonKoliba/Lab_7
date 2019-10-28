@@ -11,6 +11,7 @@ namespace UnitTest1
 	{
 	public:
 		
+		//SciFi Movie Tree Tests
 		TEST_METHOD(SciFiTreeInsertFindTest)
 		{
 			BinaryST* sciFiTree = new BinaryST();
@@ -19,14 +20,19 @@ namespace UnitTest1
 			Node* node3 = new Node("Space Balls");
 			Node* node4 = new Node("Galaxy Quest");
 
+			//Tests insertion function
 			sciFiTree->Insert(node1);
 			sciFiTree->Insert(node2);
 			sciFiTree->Insert(node3);
 			sciFiTree->Insert(node4);
 
+			//tests Find function
 			Node* findNode = sciFiTree->Find("Space Balls");
 
+			//tests the size function to make sure the 4 nodes were inserted
 			Assert::AreEqual(4, sciFiTree->Size());
+
+			//tests Find function
 			Assert::IsTrue(findNode->value == "Space Balls");
 			Assert::IsTrue(sciFiTree->Find("Avatar") == nullptr);
 
@@ -46,11 +52,15 @@ namespace UnitTest1
 			sciFiTree->Insert(node3);
 			sciFiTree->Insert(node4);
 
+			//tests remove function
 			Node* remove1 = sciFiTree->Remove("Star Trek");
 			Node* remove2 = sciFiTree->Remove("Galaxy Quest");
 
+			//tests getRoot function and makes sure the tree was reconnected after removing nodes
 			Assert::IsTrue(sciFiTree->getRoot()->leftChild->value == "Space Balls");
 			Assert::IsTrue(sciFiTree->getRoot()->leftChild->leftChild == nullptr);
+
+			//checks the Size function to make sure the size of the tree decreased after removing nodes
 			Assert::AreEqual(2, sciFiTree->Size());
 
 			delete sciFiTree;
@@ -71,19 +81,26 @@ namespace UnitTest1
 			sciFiTree->Insert(node3);
 			sciFiTree->Insert(node4);
 
+			//checks the getPrevious function
 			Node* previous1 = sciFiTree->getPrevious("Star Trek");
 			Node* previous2 = sciFiTree->getPrevious("Galaxy Quest");
 
+			//makes sure the nodes that were returned from the getPrevious function
+			//were the right nodes
 			Assert::IsTrue(previous1->value == "Star Wars");
 			Assert::IsTrue(previous2->value == "Space Balls");
 
+			//checks the Empty function
 			sciFiTree->EmptyTree(sciFiTree->getRoot());
 
+			//makes sure the size of the tree is 0 after using the Empty Function
 			Assert::AreEqual(sciFiTree->Size(), 0);
+
+			//these tests are completed for the other test trees as well
 		}
 
 
-
+		//Disney Movie Tree Tests
 		TEST_METHOD(DisneyTreeInsertFindTest)
 		{
 			BinaryST* disneyTree = new BinaryST();
@@ -156,8 +173,7 @@ namespace UnitTest1
 		}
 
 
-
-
+		//Scary Movie Tree Tests
 		TEST_METHOD(ScaryTreeInsertFindTest)
 		{
 			BinaryST* scaryTree = new BinaryST();

@@ -22,7 +22,7 @@ int main()
 	vector<Node*> sciFiAscend;
 	vector<Node*> sciFiDescend;
 
-	sciFiAscend = sciFiTree->GetAllAscending(sciFiRoot,sciFiAscend);
+	sciFiAscend = sciFiTree->GetAllAscending(sciFiRoot, sciFiAscend);
 	sciFiDescend = sciFiTree->GetAllDescending(sciFiRoot, sciFiDescend);
 
 	cout << "<< SciFi Movies Ascending Order >>" << endl;
@@ -34,6 +34,27 @@ int main()
 
 	for (int i = 0; i < sciFiDescend.size(); i++) {
 		cout << to_string(i + 1) + " " + sciFiDescend[i]->value << endl;
+	}
+
+
+	Node* remove1 = sciFiTree->Remove("Star Trek");
+	Node* remove2 = sciFiTree->Remove("Galaxy Quest");
+
+	vector<Node*> sciFiAscendRemoved;
+	vector<Node*> sciFiDescendRemoved;
+
+	sciFiAscendRemoved = sciFiTree->GetAllAscending(sciFiRoot, sciFiAscendRemoved);
+	sciFiDescendRemoved = sciFiTree->GetAllDescending(sciFiRoot, sciFiDescendRemoved);
+
+	cout << endl << "<< SciFi Movies Ascending Order With Nodes Removed >>" << endl;
+	for (int i = 0; i < sciFiAscendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + sciFiAscendRemoved[i]->value << endl;
+	}
+
+	cout << endl << "<< SciFi Movies Descending Order With Nodes Removed >>" << endl;
+
+	for (int i = 0; i < sciFiDescendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + sciFiDescendRemoved[i]->value << endl;
 	}
 
 
@@ -67,6 +88,26 @@ int main()
 		cout << to_string(i + 1) + " " + disneyDescend[i]->value << endl;
 	}
 
+	Node* remove3 = disneyTree->Remove("Monsters, Inc");
+	Node* remove4 = disneyTree->Remove("The Incredibles");
+
+	vector<Node*> disneyAscendRemoved;
+	vector<Node*> disneyDescendRemoved;
+
+	disneyAscendRemoved = disneyTree->GetAllAscending(disneyRoot, disneyAscendRemoved);
+	disneyDescendRemoved = disneyTree->GetAllDescending(disneyRoot, disneyDescendRemoved);
+
+	cout << endl << "<< Disney Movies Ascending Order With Nodes Removed >>" << endl;
+	for (int i = 0; i < disneyAscendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + disneyAscendRemoved[i]->value << endl;
+	}
+
+	cout << endl << "<< Disney Movies Descending Order With Nodes Removed >>" << endl;
+
+	for (int i = 0; i < disneyDescendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + disneyDescendRemoved[i]->value << endl;
+	}
+
 
 	//Scary Movie Tree Testing 
 	BinaryST* scaryTree = new BinaryST();
@@ -96,6 +137,26 @@ int main()
 
 	for (int i = 0; i < scaryDescend.size(); i++) {
 		cout << to_string(i + 1) + " " + scaryDescend[i]->value << endl;
+	}
+
+	Node* remove5 = scaryTree->Remove("Hocus Pocus");
+	Node* remove6 = scaryTree->Remove("Beetlejuice");
+
+	vector<Node*> scaryAscendRemoved;
+	vector<Node*> scaryDescendRemoved;
+
+	scaryAscendRemoved = scaryTree->GetAllAscending(scaryRoot, scaryAscendRemoved);
+	scaryDescendRemoved = scaryTree->GetAllDescending(scaryRoot, scaryDescendRemoved);
+
+	cout << endl << "<< Scary Movies Ascending Order With Nodes Removed >>" << endl;
+	for (int i = 0; i < scaryAscendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + scaryAscendRemoved[i]->value << endl;
+	}
+
+	cout << endl << "<< Scary Movies Descending Order With Nodes Removed >>" << endl;
+
+	for (int i = 0; i < scaryDescendRemoved.size(); i++) {
+		cout << to_string(i + 1) + " " + scaryDescendRemoved[i]->value << endl;
 	}
 
 

@@ -29,11 +29,14 @@ BinaryST::BinaryST() {
 }
 
 //Binary Search Tree Destructor
+//Calls the Empty function
 BinaryST::~BinaryST() {
 
 	EmptyTree(root);
 }
 
+//Inserts a node into the correct place on the tree
+//loops through the tree comparing values until it finds the right spot
 void BinaryST::Insert(Node* node) {
 
 	if (nodeCount == 0) {
@@ -73,7 +76,8 @@ void BinaryST::Insert(Node* node) {
 	}
 };
 
-
+//Finds the node that contains the specified value and returns a pointer to this node
+//loops through the tree comparing values until it finds the right node
 Node* BinaryST::Find(string value) {
 	
 	Node* temp = this->root;
@@ -116,16 +120,19 @@ Node* BinaryST::Find(string value) {
 	return nullptr;
 };
 
-
+//Returns a pointer to the root of the tree
 Node* BinaryST::getRoot() {
 	return root;
 }
 
+//Returns the size of the tree
 int BinaryST::Size() {
 
 	return nodeCount;
 };
 
+//Returns an array of node pointers in order from smallest to largest
+//We used a the inorder algorithm from the book to help us with this function
 vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 
 	if (node == nullptr) {
@@ -145,7 +152,8 @@ vector<Node*> BinaryST::GetAllAscending(Node* node, vector<Node*> &treeNodes) {
 	return treeNodes;
 };
 
-
+//Returns an array of node pointers in order from largest to smallest
+//This is just the reverse of GetAllAscending
 vector<Node*> BinaryST::GetAllDescending(Node* node, vector<Node*>& treeNodes) {
 	
 	if (node == nullptr) {
@@ -165,7 +173,8 @@ vector<Node*> BinaryST::GetAllDescending(Node* node, vector<Node*>& treeNodes) {
 	return treeNodes;
 };
 
-
+//Deletes all of the nodes from the tree
+//We used the empty function written in the book to help us with this function
 void BinaryST::EmptyTree(Node* node) {
 
 	if (node != nullptr) {
@@ -179,7 +188,9 @@ void BinaryST::EmptyTree(Node* node) {
 
 };
 
-
+//Returns a node pointer to the previous node of the specified value
+//loops through the tree comparing values until it finds the right node
+//and returns the node before it
 Node* BinaryST::getPrevious(string value) {
 
 	Node* temp = this->root;
@@ -222,7 +233,12 @@ Node* BinaryST::getPrevious(string value) {
 	return nullptr;
 }
 
-
+//Removes the node from the tree that contains the specified value
+//This function also reconnects the tree to make it legal after delting a node
+//This function uses my own algorithm that loops through the tree and checks if the target node
+//has other nodes connected to it, and assigns the predecessor to point left child first 
+//or the right child if the left child isn't available. In the case of both a left and right child,
+//the replacement node is assigned to be the left child, and then the right child is the child of this child
 Node* BinaryST::Remove(string value) {
 
 	Node* targetNode = this->Find(value);

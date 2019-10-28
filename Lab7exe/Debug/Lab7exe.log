@@ -3,8 +3,14 @@ C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Lab7.h(19,14): war
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.22.27905\include\xstring(4343): message :  see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(29,20): warning C4018:  '<': signed/unsigned mismatch
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(35,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(60,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(66,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(91,20): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(97,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(50,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(56,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(81,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(87,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(101,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(107,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(132,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(138,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(152,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7exe\Lab7exe.cpp(158,20): warning C4018:  '<': signed/unsigned mismatch
   Lab7exe.vcxproj -> C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab_7\Lab7\Debug\Lab7exe.exe
